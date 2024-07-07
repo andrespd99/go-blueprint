@@ -36,7 +36,15 @@ func getTransforms() ([]string, error) {
 	if err != nil {
 		return []string{}, ErrFileNotFound
 	}
-	transforms := string(data)
+	transformsDirty := strings.Split(string(data), "\n")
+	transforms := []string{}
 
-	return strings.Split(transforms, "\n"), nil
+	for _, t := range transformsDirty {
+		if t == "" {
+			continue
+		}
+		transforms = append(transforms, t)
+	}
+
+	return transforms, nil
 }
