@@ -1,0 +1,7 @@
+* app
+* site
+* time
+* hq
+get *
+go *
+lets *
