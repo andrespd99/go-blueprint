@@ -17,10 +17,21 @@ const otherWord = "*"
 func main() {
 	rand.New(rand.NewSource(time.Now().UTC().UnixNano()))
 
-	transforms, err := getTransforms()
-	if err != nil {
-		fmt.Print(err)
-		return
+	// transforms, err := getTransforms()
+
+	// if err != nil {
+	// 	fmt.Print(err)
+	// 	return
+	// }
+
+	transforms := []string{
+		"* app",
+		"* site",
+		"* time",
+		"* hq",
+		"get *",
+		"go *",
+		"lets * ",
 	}
 
 	s := bufio.NewScanner(os.Stdin)
